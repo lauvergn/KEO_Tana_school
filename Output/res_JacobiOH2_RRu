@@ -1,0 +1,582 @@
+ ===============================================
+ ===============================================
+ Working with Tnum51.0-Tana21.0
+ Compiled on "lotofa" the Wed 30 Jul 2025 - 19:22:32
+ Compiler:         GCC version 15.1.0
+ Compiler options: -cpp -I obj/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/ConstPhys/obj/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/FOR_EVRT/obj/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/nDindex/obj/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/EVRT_dnSVM/obj/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/QuantumModelLib/OBJ/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/AD_dnSVM/OBJ/obj_gfortran_opt0_omp1_lapack1_int4 -I /Users/lauvergn/git/Tnum-Tana/Ext_Lib/QDUtilLib/OBJ/obj_gfortran_opt0_omp1_lapack1_int4 -iprefix /opt/homebrew/Cellar/gcc/15.1.0/bin/../lib/gcc/current/gcc/aarch64-apple-darwin24/15/ -D__DYNAMIC__ -D __LAPACK=1 -D __COMPILE_DATE="Wed 30 Jul 2025 - 19:22:32" -D __COMPILE_HOST="lotofa" -D __TNUM_VER='51.0' -D __TANA_VER='21.0' -fPIC -mmacosx-version-min=15.0.0 -mcpu=apple-m1 -mlittle-endian -mabi=lp64 -g -Og -Wuninitialized -fbacktrace -fcheck=all -fcheck=pointer -finit-real=nan -finit-integer=nan -fopenmp -J obj/obj_gfortran_opt0_omp1_lapack1_int4
+ -----------------------------------------------
+ Tnum is written David Lauvergnat [1]
+ Tana is written by Mamadou Ndong [1] and David Lauvergnat [1]
+   with contributions
+       Emil Lund klinting and Frederik Bader (coupling with MidasCpp) [2]
+ Tnum and Tana are under MIT license.
+
+ [1]: Institut de Chimie Physique, UMR 8000, CNRS-Université Paris-Saclay, France
+ [2]: Department of Chemistry, Aarhus University, DK-8000 Aarhus C, Denmark
+ ===============================================
+ ===============================================
+ =================================================
+ =================================================
+ BEGINNING Read_CoordType
+ PhysCte_path: /Users/lauvergn/git/Tnum-Tana/Ext_Lib/ConstPhys
+ PHYSICAL CONSTANTS, version: CODATA 2006
+ MASSES, version: NIST2012            
+ The number of read isotopes:         178
+ The unit "cm-1" is already present
+  Writing energy unit : cm-1
+  Working energy unit : au
+ auTOenergy      =      219474.631443
+ auTOcm_inv      =      219474.631443
+ auTOeV          =          27.211384
+ auTOGHz         =     6579683.922900
+ auTOkcalmol_inv =         627.509469
+ auTOkJmol_inv   =        2625.499618
+ Ta (fs)         =           0.024189
+ =================================================
+ =================================================
+ New Coordinate transformations           3
+ =================================================
+ ==========================================
+ transfo:               bunch_poly
+ Option of the transfo: 0
+ Skip the transfo:      F
+ num_transfo:           1
+ inTOout:               F
+------------------------------------------
+   Read the atoms
+   nb_vect           2
+   nat           5
+   nat_act           3
+ atom:           1           8   29156.945687206524     
+ atom:           2           1   1837.1526464003414     
+ atom:           3           1   1837.1526464003414     
+   Read the dummy atoms, X
+   nat_act,ncart_act           3           9
+ ==========================================
+ ==========================================
+ transfo:               poly
+ Option of the transfo: 0
+ Skip the transfo:      F
+ num_transfo:           2
+ inTOout:               T
+------------------------------------------
+ list_Qpoly_TO_Qprim           1           2           3
+ list_Qprim_TO_Qpoly           1           2           3
+ BEGINNING M_Tana_FROM_Bunch2Transfo
+ iat,Mat_At_TO_centers           1   1.0000000000000000        0.0000000000000000        0.0000000000000000     
+ iat,Mat_At_TO_centers           2   0.0000000000000000        1.0000000000000000        0.0000000000000000     
+ iat,Mat_At_TO_centers           3   0.0000000000000000        0.0000000000000000        1.0000000000000000     
+ iat,Mat_At_TO_centers           4  0.94072572698756918        5.9274273012430850E-002   0.0000000000000000     
+ iat,Mat_At_TO_centers           5   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ iAtA,iAtB           1           2
+ iAtA,iAtB           4           3
+ A
+  1       -1.0000000000       1.0000000000       0.0000000000
+  2       -0.9407257270      -0.0592742730       1.0000000000
+  3        0.8880851267       0.0559574366       0.0559574366
+ A_inv:
+ Each line corresponds to a linear combinaison of the vectors to form an atomic position
+           1  -5.9274273012430843E-002  -5.5957436636182002E-002   1.0000000000000000     
+           2  0.94072572698756907       -5.5957436636181995E-002   1.0000000000000000     
+           3   0.0000000000000000       0.94404256336381798        1.0000000000000000     
+  1       -0.0592742730      -0.0559574366       1.0000000000
+  2        0.9407257270      -0.0559574366       1.0000000000
+  3        0.0000000000       0.9440425634       1.0000000000
+   M_Tana (with the center-of-mass contribution)
+  1        0.0005786177      -0.0000000000       0.0000000000
+  2       -0.0000000000       0.0005765848       0.0000000000
+  3        0.0000000000       0.0000000000       0.0000304588
+   M_Tana (without the center-of-mass contribution)
+  1        0.0005786177      -0.0000000000
+  2       -0.0000000000       0.0005765848
+ END M_Tana_FROM_Bunch2Transfo
+ ==========================================
+ ==========================================
+ transfo:               active
+ Option of the transfo: 0
+ Skip the transfo:      F
+ num_transfo:           3
+ inTOout:               T
+------------------------------------------
+ list_act_OF_Qdyn or type_var           1           1           1
+ ==========================================
+ Tana is possible:  T
+ Parameter(s) to be optimized?:            0
+ =================================================
+ =================================================
+ END New Coordinates transformation
+ =================================================
+ =================================================
+ END Read_CoordType
+ =================================================
+ =================================================
+ BEGINNING read_RefGeom
+ ------------------------------------------------------
+ --- Coordinates used for the operators ---------------
+ ------------------------------------------------------
+ nb_scalar_Op           0
+ nb_CAP           0
+ pot_itQtransfo           2
+ Operators (pot...) with Qdyn coordinates
+ ------------------------------------------------------
+ ------------------------------------------------------
+ --- Coordinates used for the reference geometry ------
+ ------------------------------------------------------
+  Read xyz0 coordinates:                                                                                                                                                                                                                                        
+ Qdyn0 coordinates (not transformed): [bohr]/[rad or cos(angle)]
+R1_F(BF)                    1.869713
+R2_F(BF)                    1.892159
+u2_F(BF)                   -0.230617
+ Qact0 coordinates (not transformed): [bohr]/[rad or cos(angle)]
+R1_F(BF)                    1.869713
+R2_F(BF)                    1.892159
+u2_F(BF)                   -0.230617
+ -----------------------------------------
+ Qdyn0 coordinates (transformed):
+R1_F(BF)            1     1.869713 au     0.989409 Angs
+R2_F(BF)            2     1.892159 au     1.001287 Angs
+u2_F(BF)            3     1.803508 Rad     103.333382 °
+ -----------------------------------------
+ -----------------------------------------
+ Qact0 coordinates (transformed):
+R1_F(BF)            1     1.869713 au     0.989409 Angs
+R2_F(BF)            2     1.892159 au     1.001287 Angs
+u2_F(BF)            3     1.803508 Rad     103.333382 °
+ -----------------------------------------
+ ------------------------------------------------------
+ END read_RefGeom
+     Time and date in Tnum90_MCTDH :  0h:37m:27.112s, the 31/ 7/2025
+        real (s):              0.000 in Tnum90_MCTDH
+        real    :   0d  0h  0m  0s in Tnum90_MCTDH
+        cpu (s):              0.000 in Tnum90_MCTDH
+  Total real (s):              0.000
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.000
+ ==============================================
+ = XYZ format (reference geometry) ============
+           3
+
+      8      -0.05452       0.00000      -0.04573
+      1      -0.05452       0.00000       0.94368
+      1       0.91978       0.00000      -0.21799
+ = END XYZ format =============================
+ ==============================================
+ nb_act,nb_rigid100           3           0
+  Gref from Tnum-Tana
+
+ =================================================
+  BEGINNING Tana
+     Time and date in Tana :  0h:37m:27.116s, the 31/ 7/2025
+        real (s):              0.003 in Tana
+        real    :   0d  0h  0m  0s in Tana
+        cpu (s):              0.012 in Tana
+  Total real (s):              0.003
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.001
+ =================================================
+ vectors indices in their subsystem to the indices in the BF
+ =================================================
+ Initialization of the coordinates associated with each subsystem
+ ************************************
+ begin sub_system           1
+ nvec=           2
+ nsub_syt=           0
+ i_var_F= R           1 i_var_BF=           1 qval=   1.8697128239711849     
+ i_var_F= R           2 i_var_BF=           2 qval=   1.8921586536814810     
+ i_var_F th=           3 i_var_BF=           3 qval= -0.23061669434237836     
+ end sub_system           1
+ ************************************
+
+
+ R_1^{(BF)}          
+    1           2             1       1             Id                     0.1000E+01 Ix    0.0000E+00
+ Tana (generic)           1 : R1-F(BF)
+ Latex                     1 : R_1^{(BF)}
+ R_2^{(BF)}          
+    1           2             1       2             Id                     0.1000E+01 Ix    0.0000E+00
+ Tana (generic)           2 : R2-F(BF)
+ Latex                     2 : R_2^{(BF)}
+ u_2^{(BF)}          
+    1          -3             1       3             Id                     0.1000E+01 Ix    0.0000E+00
+ Tana (generic)           3 : u2-F(BF)
+ Latex                     3 : u_2^{(BF)}
+ =================================================
+ Initialization of the M_mass matrix of each subsystem
+ =================================================
+  Computation of the 2xKEO (in full dimension)
+ entree S_(           1 )
+ sub_system S_(           1 )
+ init elementaries op. for S_(           1 )
+ system S_r, r=           1
+ size before simplify          13
+ size after simplify          15
+ =================================================
+ x (sqrt(rho/jac)
+    2           2            -1       1             r^(-1)                 0.1000E+01 Ix    0.0000E+00
+    2           2            -1       2             r^(-1)                 0.1000E+01 Ix    0.0000E+00
+ x_inv (sqrt(jac/rho)
+    2           2             1       1             r                      0.1000E+01 Ix    0.0000E+00
+    2           2             1       2             r                      0.1000E+01 Ix    0.0000E+00
+ =================================================
+  Add the extra potential term  KEO
+ =================================================
+ number of terms before adding Vextr=          15
+ number of terms after  adding Vextr=          15
+ =================================================
+  Computation of the 2xKEO (in reduced dimension)
+ =================================================
+ =================================================
+  Expand 2xKEO (in reduced dimension)
+ number of terms after the expansion=          17
+ =================================================
+ =================================================
+  output of the analytical  KEO
+  MCTDH    Form:     T
+  VSCF     Form:     F
+  MidasCpp Form:     F
+  LaTex    Form:     F
+  Fortran  Form:     F
+  KEOExportVersion:            1
+ =================================================
+ =================================================
+ output MCTDH format
+ -------------------------------------------------
+Op_DEFINE-SECTION
+  title
+    No title
+  end-title
+END-Op_DEFINE-SECTION
+
+PARAMETER-SECTION
+
+END-PARAMETER-SECTION
+
+
+HAMILTONIAN-SECTION
+----------------------------------------------------------------------------------------------------------------------------------------
+modes   | R1-F(BF) | R2-F(BF) | u2-F(BF)
+----------------------------------------------------------------------------------------------------------------------------------------
+
+-2.8930886422588747d-004 |1   q^-2 |3   dq^2
+2.8930886422588747d-004 |1   q^-2 |3   dq*q^2*dq
+-2.8930886422588747d-004 |1   dq^2
+-2.8829239505164130d-004 |2   q^-2 |3   dq^2
+2.8829239505164130d-004 |2   q^-2 |3   dq*q^2*dq
+-2.8829239505164130d-004 |2   dq^2
+
+
+
+end-hamiltonian-section
+end-operator
+
+ =================================================
+ --- First comparison with internal analytical KEO
+ =================================================
+  BEGINNING comparison_G_FROM_Tnum_Tana
+    end calc G with Tana
+    end calc G with Tnum
+          max diff G:    1.0842021724855044E-019
+ Relative max diff G:    1.8737797325818846E-016
+
+    end calc f2, f1 with Tnum
+    end calc f2, f1 with Tana
+          max diff f2:    2.7105054312137611E-020
+ Relative max diff f2:    9.3688986629094230E-017
+          max diff f1:    6.7762635780344027E-020
+ Relative max diff f1:    8.9977481550502811E-016
+         max diff vep:    7.1259892520361805E-020
+        vep from Tana:    0.0000000000000000     
+        vep from Tnum:   -7.1259892520361805E-020
+
+         max error:  0.90E-15
+  END comparison_G_FROM_Tnum_Tana
+ =================================================
+ WARNING:
+ NO COMPARISON with MCTDH read KEO
+
+     Time and date in Tana :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.006 in Tana
+        real    :   0d  0h  0m  0s in Tana
+        cpu (s):              0.016 in Tana
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+  END Tana
+ =================================================
+ =================================================
+ === Reference geometry (not recentered) =========
+ -----------------------------------------
+Qact,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qin (Qact),it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ name_transfo           3  active
+ -----------------------------------------
+Qin ,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qout,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ name_transfo           2  poly
+ -----------------------------------------
+Qin ,it_Qtransfo: 2  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qout,it_Qtransfo: 2  .0000 .0000 1.8697 1.8412 .0000 -.4364
+ -----------------------------------------
+ name_transfo           1  bunch_poly
+ -----------------------------------------
+Qin ,it_Qtransfo: 1  .0000 .0000 1.8697 1.8412 .0000 -.4364
+ -----------------------------------------
+ -----------------------------------------
+Qxyz,it_Qtransfo: 1  -.1030 .0000 -.0864
+Qxyz,it_Qtransfo: 1  -.1030 .0000 1.7833
+Qxyz,it_Qtransfo: 1  1.7381 .0000 -.4119
+Qxyz,it_Qtransfo: 1  .0000 .0000 .0000
+Qxyz,it_Qtransfo: 1  .0000 .0000 .0000
+ -----------------------------------------
+  Cartesian coordinates without the Cartesian Transformation (au):
+ d0x =
+           -0.103026309           0.000000000          -0.086408093
+           -0.103026309           0.000000000           1.783304731
+            1.738128594           0.000000000          -0.411945598
+            0.000000000           0.000000000           0.000000000
+            0.000000000           0.000000000           0.000000000
+  Cartesian coordinates without the Cartesian Transformation (ang):
+ ==============================================
+ = Gaussian CC ================================
+      8     0          -0.054519174           0.000000000          -0.045725193
+      1     0          -0.054519174           0.000000000           0.943684219
+      1     0           0.919778037           0.000000000          -0.217992222
+     -1     0           0.000000000           0.000000000           0.000000000
+     -1     0           0.000000000           0.000000000           0.000000000
+ = END Gaussian CC ============================
+ ==============================================
+ ==============================================
+ = XYZ format =================================
+           5
+
+      8          -0.054519174           0.000000000          -0.045725193
+      1          -0.054519174           0.000000000           0.943684219
+      1           0.919778037           0.000000000          -0.217992222
+     -1           0.000000000           0.000000000           0.000000000
+     -1           0.000000000           0.000000000           0.000000000
+ = END XYZ format =============================
+ ==============================================
+ =================================================
+ END Finalize_TnumTana_Coord_PrimOp
+     Time and date in Tnum90_MCTDH :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.000 in Tnum90_MCTDH
+        real    :   0d  0h  0m  0s in Tnum90_MCTDH
+        cpu (s):              0.011 in Tnum90_MCTDH
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+ ======================================
+ ======================================
+ ======================================
+ ======================================
+ ======================================
+     Time and date in Qact->Qxyz :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.000 in Qact->Qxyz
+        real    :   0d  0h  0m  0s in Qact->Qxyz
+        cpu (s):              0.011 in Qact->Qxyz
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+     Time and date in Qact->Qxyz :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.000 in Qact->Qxyz
+        real    :   0d  0h  0m  0s in Qact->Qxyz
+        cpu (s):              0.011 in Qact->Qxyz
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+ ======================================
+ -----------------------------------------
+Qact,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qin (Qact),it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ name_transfo           3  active
+ -----------------------------------------
+Qin ,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qout,it_Qtransfo: 3  1.8697 1.8922 -.2306
+ -----------------------------------------
+ name_transfo           2  poly
+ -----------------------------------------
+Qin ,it_Qtransfo: 2  1.8697 1.8922 -.2306
+ -----------------------------------------
+ -----------------------------------------
+Qout,it_Qtransfo: 2  .0000 .0000 1.8697 1.8412 .0000 -.4364
+ -----------------------------------------
+ name_transfo           1  bunch_poly
+ -----------------------------------------
+Qin ,it_Qtransfo: 1  .0000 .0000 1.8697 1.8412 .0000 -.4364
+ -----------------------------------------
+ -----------------------------------------
+Qxyz,it_Qtransfo: 1  -.1030 .0000 -.0864
+Qxyz,it_Qtransfo: 1  -.1030 .0000 1.7833
+Qxyz,it_Qtransfo: 1  1.7381 .0000 -.4119
+Qxyz,it_Qtransfo: 1  .0000 .0000 .0000
+Qxyz,it_Qtransfo: 1  .0000 .0000 .0000
+ -----------------------------------------
+  Cartesian coordinates without the Cartesian Transformation (au):
+ d0x =
+           -0.103026309           0.000000000          -0.086408093
+           -0.103026309           0.000000000           1.783304731
+            1.738128594           0.000000000          -0.411945598
+            0.000000000           0.000000000           0.000000000
+            0.000000000           0.000000000           0.000000000
+  Cartesian coordinates without the Cartesian Transformation (ang):
+ ==============================================
+ = Gaussian CC ================================
+      8     0          -0.054519174           0.000000000          -0.045725193
+      1     0          -0.054519174           0.000000000           0.943684219
+      1     0           0.919778037           0.000000000          -0.217992222
+     -1     0           0.000000000           0.000000000           0.000000000
+     -1     0           0.000000000           0.000000000           0.000000000
+ = END Gaussian CC ============================
+ ==============================================
+ ==============================================
+ = XYZ format =================================
+           5
+
+      8          -0.054519174           0.000000000          -0.045725193
+      1          -0.054519174           0.000000000           0.943684219
+      1           0.919778037           0.000000000          -0.217992222
+     -1           0.000000000           0.000000000           0.000000000
+     -1           0.000000000           0.000000000           0.000000000
+ = END XYZ format =============================
+ ==============================================
+  Cartesian coordinates:
+ ==============================================
+ = Gaussian CC ================================
+      8     0          -0.054519174           0.000000000          -0.045725193
+      1     0          -0.054519174           0.000000000           0.943684219
+      1     0           0.919778037           0.000000000          -0.217992222
+ = END Gaussian CC ============================
+ ==============================================
+ ==============================================
+ = XYZ format =================================
+           3
+
+      8          -0.054519174           0.000000000          -0.045725193
+      1          -0.054519174           0.000000000           0.943684219
+      1           0.919778037           0.000000000          -0.217992222
+ = END XYZ format =============================
+ ==============================================
+ ======================================
+ ======================================
+ ======================================
+ ======================================
+          10  evaluation of sub_QactTOd0x
+ ======================================
+ ======================================
+ ======================================
+ ======================================
+          10  evaluation of calc3_f2_f1Q_num
+ ======================================
+     Time and date in f2 :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.000 in f2
+        real    :   0d  0h  0m  0s in f2
+        cpu (s):              0.011 in f2
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+ BEGINNING calc3_f2_f1Q_num
+ ndimG           6
+ WriteCC F
+ Qact   1.8697128239711849        1.8921586536814810      -0.23061669434237836     
+
+ num_GG,num_g F F
+ num_x,nrho F           1
+ JJ           0
+
+  f2,f1,vep with Tana
+ nb_act           3
+ vep rho =              0.000000000000000             1.000000000000000
+
+  f1i =       0.0000000000       0.0000000000      -0.0000753107
+
+  f2ij
+  1       -0.0002893089       0.0000000000       0.0000000000
+  2        0.0000000000      -0.0002882924       0.0000000000
+  3        0.0000000000       0.0000000000      -0.0001545971
+
+ END calc3_f2_f1Q_num
+     Time and date in f2 :  0h:37m:27.122s, the 31/ 7/2025
+        real (s):              0.000 in f2
+        real    :   0d  0h  0m  0s in f2
+        cpu (s):              0.011 in f2
+  Total real (s):              0.009
+  Total real    :   0d  0h  0m  0s
+  Total cpu (s):              0.006
+ ======================================
+ ======================================
+ ======================================
+          10  evaluation of calc3_f2_f1Q_num
+ ======================================
+# ==============================================
+# ==============================================
+# === Taylor expansion of KEO for MCTDH ========
+# === !! The coordinates are the Qi ============
+# === But we define NQi for the KEO ============
+# === NQi=q[p] : NQi = ( Qi - p ) ==============
+# = or NQi=sin[1.,p] : NQi = sin( 1.(Qi - p)) ==
+# ==============================================
+# ==============================================
+-----------------------------------------------
+ LABELS-SECTION
+-----------------------------------------------
+ NQ1=q[ 1.8697128239711849 ]
+ NQ2=q[ 1.892158653681481 ]
+ NQ3=q[ -0.23061669434237836 ]
+-----------------------------------------------
+ END-LABELS-SECTION
+-----------------------------------------------
+
+
+-----------------------------------------------
+HAMILTONIAN-SECTION
+modes   | R1_F(BF) | R2_F(BF) | u2_F(BF)
+-----------------------------------------------
+-----------------------------------------------
+# Zero order part: -1/2*G^ij(Qref)
+-----------------------------------------------
+ -2.8930886422588747d-004  |1 dq^2
+ -2.8829239505164130d-004  |2 dq^2
+ -1.5459707756281877d-004  |3 dq^2
+-----------------------------------------------
+# First order part:
+#         -1/2*dG^ij/dNQk d./dQi * NQk * d./dQj
+-----------------------------------------------
+ 8.3817089593595998d-005  |1 NQ1 |3 dq^2
+ 8.0585350254787496d-005  |2 NQ2 |3 dq^2
+ -7.5310660637139553d-005  |3 dq*NQ3*dq
+
+-----------------------------------------------
+# Second order part:
+# -1/4*d^2G^ij/dNQk^2   d./dQi * NQk*NQl * d./dQj
+-----------------------------------------------
+ -6.7243286123137613d-005  |1 NQ1^2 |3 dq^2
+ 2.0415393646141498d-005  |1 NQ1 |3 dq*NQ3*dq
+ -6.3883662792755139d-005  |2 NQ2^2 |3 dq^2
+ 1.9628236384019939d-005  |2 NQ2 |3 dq*NQ3*dq
+ 2.0415393646141498d-005  |1 NQ1 |3 dq*NQ3*dq
+ 1.9628236384019939d-005  |2 NQ2 |3 dq*NQ3*dq
+ 1.6328102536525773d-004  |3 dq*NQ3^2*dq
+-----------------------------------------------
+END-HAMILTONIAN-SECTION
+-----------------------------------------------
+# ==============================================
+# ==============================================
+# === END: Taylor expansion of T for MCTDH =====
+# ==============================================
+# ==============================================
+ mem_tot,max_mem_used                    0                    0
+ nb_alloc,nb_dealloc           0           0
+ END Tnum
